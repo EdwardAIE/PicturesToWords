@@ -140,9 +140,9 @@
 				NewImage.src = "Images/" + Word[Nword] + ".PNG" ;
 				NewImage.onerror = function()
 				{
-					let NewImage = document.getElementById("image" +(Nword + 1) + "");
-					NewImage.src = "Images/" + Word[Nword] + ".png" ;
-					NewImage.onerror = function()
+					let NewNewImage = document.getElementById("image" +(Nword + 1) + "");
+					NewNewImage.src = "Images/" + Word[Nword] + ".png" ;
+					NewNewImage.onerror = function()
 					{
 						NewImage.src = "Images/Undefined.png";
 					}
