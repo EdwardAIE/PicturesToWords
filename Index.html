@@ -12,7 +12,7 @@
 				  font-weight: bold;
 				  font-size: 32px;
 				  left: 30px;">Super Dooper Word to Picture Website</p>
-				  <p>tractor impactor</p>
+				  <p>explosion</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -148,7 +148,7 @@
 					ErrorCount = ErrorCount + 1;
 					if (ErrorCount == 1)
 					{
-						alert("search for lowercases");
+						alert("search for lowercases, current word: " + CurrentWord + "");
 						NewImage.src = "Images/" + CurrentWord + ".png";
 					}
 					if (ErrorCount == 2)
@@ -161,12 +161,8 @@
 				{
 				ErrorCount = 0;
 				alert("Successfully Loaded");
-				}
-
-				
-				
-				
 				Nword = Nword + 1
+				}
 			}
 			
 			//alert("The first word is " + Word[0]);
