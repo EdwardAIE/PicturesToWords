@@ -12,7 +12,7 @@
 				  font-weight: bold;
 				  font-size: 32px;
 				  left: 30px;">Super Dooper Word to Picture Website</p>
-				  <p>funky panda</p>
+				  <p>funky dancing panda</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -138,7 +138,7 @@
 				
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
-				NewImage.src = "Images/" + Word[Nword] + ".PNG" ;
+				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG" ;
 				
 				NewImage.onerror = function()
 				{
