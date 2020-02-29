@@ -1,0 +1,30 @@
+Place holder:
+
+var ImgDir = new File([""],"Images/" + Word[Nword] + ".png");
+				if(ImgDir.exists() == true)
+				{
+				document.getElementById("image" +(Nword + 1) + "").src = "Images/" + Word[Nword] + ".png" ;
+				}
+				else
+				{
+				var ImgDir = new File([""],"Images/" + Word[Nword].toLowerCase() + ".png");
+				if(ImgDir.exists() == true)
+				{
+				document.getElementById("image" +(Nword + 1) + "").src = "Images/" + Word[Nword].toLowerCase() + ".png" ;
+				}
+				
+				}
+				
+				
+				
+				
+				
+//Picture to words from file name
+				let NewImage = document.getElementById("image" +(Nword + 1) + "")
+				NewImage.src = "Images/" + Word[Nword] + ".png" ;
+				document.head.append(NewImage);
+				
+				NewImage.onerror = function()
+				{
+					NewImage.src = "Images/Undefined.png";
+				}

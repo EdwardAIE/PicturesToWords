@@ -1,0 +1,5 @@
+:Red:Red.png:&
+:Blue:Blue.png:&
+:Green:Green.png:&
+:Yellow:Yellow.png:&
+:Pink:Pink.png:&

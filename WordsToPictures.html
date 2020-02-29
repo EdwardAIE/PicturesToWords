@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HQ's Word to Pictures</title>
+	</head>
+	<body style="background-color:#6583b2;">
+		<div id="Everything" style="width: 690px; margin: 0px auto;">
+		<div>
+		<p style="position:relative;
+				  font-family:cursive;
+				  color: white;
+				  font-weight: bold;
+				  font-size: 32px;
+				  left: 30px;">HQ's Super Dooper Word to Picture Website</p>
+		</div>
+		<div class="Input" 
+			 style=" position: relative; 
+					 top: 50px;
+					 left: 30px;
+					 height: 450px;
+					 width: 630px;
+					 border: 5px solid #4286f4;
+					 background-color: #ddddff;
+					 ">
+			<p style="position:relative;
+				  font-family:cursive;
+				  color: black;
+				  font-weight: bold;
+				  font-size: 16px;
+				  left: 5px;">Type sentence in here</p>
+			<!--
+			It should be at the top of the page
+			
+			it should have some text explaining what to do
+			
+			a button that will start a function
+			
+			and a text box in which the input can be saved
+			
+			-->
+			<!--This is the textbox input-->
+			<textarea id="texty" style="
+				   border: 2px solid #4286f4;
+				   width: 624px;
+				   height: 300px;
+				   resize: none"></textarea>
+			<br>
+			<button onclick="RandomFunction()"
+					style="position:relative;
+						   top: 5px;
+						   float: right;
+						   right: 20px;
+						   height: 40px;
+						   width: 100px;">Submit</button>
+			<script>
+			
+			
+			function RandomFunction()
+			{
+			//the function begins when the button is pressed
+			alert("The button works and there are no initial errors");
+			//the varible sentence is whatever is in the input box
+			var sentence = document.getElementById("texty").value + " ";	
+			//alert( sentence );
+			
+			//finding the positing of the spaces in Sentence
+			var Spaces = [];
+			var LastSpace = 0;
+			var ThisSpace = 0;
+			
+			if(sentence.indexOf(" ", 0) == 0)
+			{
+			 Spaces.push(sentence.indexOf(" ", 0));
+			 LastSpace = sentence.indexOf(" ", 0);
+			}
+			
+			
+			while(LastSpace > -1)
+			{
+			 Spaces.push(sentence.indexOf(" ", LastSpace + 1));
+			 LastSpace = sentence.indexOf(" ", LastSpace + 1);
+			}
+			
+			//alert("Spaces are at" + Spaces + "");
+			
+			//Turing the Spaces into words
+			
+			var Word = []
+			var UFWord = []
+			var a = 0;
+			var validWord = 0;
+			
+			UFWord.push(sentence.substring(0, Spaces[a]));
+			
+			while(validWord > -1)
+			{
+				UFWord.push(sentence.substring(Spaces[a] + 1, Spaces[(a+1)]));
+				a = (a+1);
+				validWord = Spaces[a+1];
+			}
+			
+			//filtering for words double spaces 
+			
+			UFWord.forEach(function(element)
+			{
+			if(element != "")
+			{
+			Word.push(element);
+			}
+			}
+			)
+			
+			//clearing the table from any previous runs
+			
+			var j = 1;
+			while(j <= 21)
+			{
+				document.getElementById("word" + j + "").innerHTML = Word[Nword] + "";
+				j = j+1
+			}
+			
+			var j = 1;
+			while(j <= 21)
+			{
+				document.getElementById("cell" + j + "").style.visibility = "hidden";
+				j=j+1
+			}
+			
+			//re-writing the new words into table
+			
+			var Nword = 0
+			
+			while(typeof Word[Nword] !== "undefined")
+			{	
+				document.getElementById("cell" + (Nword + 1) + "").style.visibility = "visible";
+				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
+				
+				
+				let NewImage = document.getElementById("image" +(Nword + 1) + "");
+				NewImage.src = "Images/" + Word[Nword] + ".png" ;
+				NewImage.onerror = function()
+				{
+					NewImage.src = "Images/Undefined.png";
+				}
+
+				
+				
+				
+				Nword = Nword + 1
+			}
+			
+			//alert("The first word is " + Word[0]);
+			//alert("The second word is " + Word[1]);
+			//alert("The third word is " + Word[2]);
+			
+			//re-placing images
+			
+			}
+			</script>
+			
+		</div>
+		<p style="position: relative; 
+					 top: 70px;
+					 left: 30px;
+					 ">Output:</p>
+		<div class="Output" style="position: relative; 
+					 top: 100px;
+					 bottom: 100px;
+					 left: 30px;
+					 height: 450px;
+					 width: 630px;
+					 border: 3px solid #4286f4;
+					 background-color:#ddddff;
+					 ">
+		
+			
+			<!--
+			This is the output, it should be underneath the input
+			-->
+			<div style="; display: table;">
+    <div style="display: table-row">
+        <div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell1">
+						 <div style=" height: 90px;
+									  width: 90px">
+									  <img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image1"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word1">A Word</p>
+						 </div>
+			
+			
+			</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell2">
+						 <div style=" height: 90px;
+									  width: 90px;">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image2"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word2">A Word</p>
+						</div>
+						</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell3">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image3"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word3">A Word</p>
+						 </div>
+			
+			
+			</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell4">
+						 <div style=" height: 90px;
+									  width: 90px">
+								<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image4"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word4">A Word</p>
+						</div>
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell5">
+						  <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image5"
+									  src="Images/Undefined.png"
+									  >		  
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word5">A Word</p>
+						</div>
+			
+			</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell6">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image6"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word6">A Word</p>
+						</div>
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell7">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image7"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word7">A Word</p>
+						</div>
+			</div>
+    </div>
+	<div style="display: table-row">
+	
+
+        <div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell8">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image8"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word8">A Word</p>
+						 </div>
+			
+			
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell9">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image9"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word9">A Word</p>
+						</div>
+						</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell10">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image10"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word10">A Word</p>
+						 </div>
+			
+			
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell11">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image11"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word11">A Word</p>
+						</div>
+			</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell12">
+						  <div style=" height: 90px;
+									  width: 90px">
+								<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image12"
+									  src="Images/Undefined.png"
+									  >	  
+						  </div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word12">A Word</p>
+						</div>
+			
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell13">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image13"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word13">A Word</p>
+						</div>
+			</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell14">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image14"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word14">A Word</p>
+						</div>
+			</div>
+    </div>
+	<div style="display: table-row">
+	
+
+        <div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell15">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image15"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word15">A Word</p>
+						 </div>
+			
+			
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell16">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image16"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word16">A Word</p>
+						</div>
+						</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell17">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image17"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word17">A Word</p>
+						 </div>
+			
+			
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell18">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image18"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word18">A Word</p>
+						</div>
+			</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width: 90px;
+						display:table-cell;
+			             " id="cell19">
+						  <div style=" height: 90px;
+									  width: 90px">
+								<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image19"
+									  src="Images/Undefined.png"
+									  >	  
+						  </div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word19">A Word</p>
+						</div>
+			
+			</div>
+			<div style="position:relative; 
+						background-color: white;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell20">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image20"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word20">A Word</p>
+						</div>
+			</div>
+			<div style="position:relative; 
+						background-color: #f2f2f2;
+						height: 120px;
+						width:90px;
+						display:table-cell;
+			             " id="cell21">
+						 <div style=" height: 90px;
+									  width: 90px">
+							<img 
+									  style="height: 90px;
+											 width: 90px;
+											 position:absolute"
+									  id = "image21"
+									  src="Images/Undefined.png"
+									  >
+						</div>
+						 <div align=center
+							  style=" height: 30px;
+									  width: 90px;">
+						 <p id="word21">A Word</p>
+						</div>
+			</div>
+    </div>
+</div>
+</div>
+<div style="position:relative;
+			left: 30px;
+		   top: 100px;
+		   height: 100px;">
+		   <h1></h1>
+		   </div>
+	</div>
+	</body>
+</html>
