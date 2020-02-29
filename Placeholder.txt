@@ -28,3 +28,54 @@ var ImgDir = new File([""],"Images/" + Word[Nword] + ".png");
 				{
 					NewImage.src = "Images/Undefined.png";
 				}
+				
+				
+				
+				
+				
+				
+				
+//MORE NONSENSE
+	let NewImage = document.getElementById("image" +(Nword + 1) + "");
+				NewImage.src = "Images/" + Word[Nword] + ".PNG" ;
+				var ErrorCount = 0;
+				var CurrentWord = "" + Word[Nword] + "";
+				NewImage.onerror = function()
+				{
+					let NewImage = document.getElementById("image" +(Nword + 1) + "")
+					alert("An Error has been detected");
+					ErrorCount = ErrorCount + 1;
+					if (ErrorCount == 1)
+					{
+						alert("search for lowercases, current word: " + CurrentWord + "");
+						NewImage.src = "Images/" + CurrentWord + ".png";
+					}
+					if (ErrorCount == 2)
+					{
+						alert("replacing with unknown");
+						NewImage.src = "Images/Undefined.png" ;
+					}
+				}
+				NewImage.onload = function()
+				{
+				ErrorCount = 0;
+				alert("Successfully Loaded");
+				Nword = Nword + 1
+				}
+				
+				
+				
+				
+Disclaimer: All artwork and images used are my own drawings made for the purpose 
+of this website. I consider tham public domain, please feel free to save, use or
+distribute however you like, they are not copyrighted.
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
