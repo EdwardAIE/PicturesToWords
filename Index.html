@@ -138,14 +138,25 @@
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
 				NewImage.src = "Images/" + Word[Nword] + ".PNG" ;
+				var ErrorCount = 0;
 				NewImage.onerror = function()
 				{
-					let NewNewImage = document.getElementById("image" +(Nword + 1) + "");
-					NewNewImage.src = "Images/" + Word[Nword] + ".png" ;
-					NewNewImage.onerror = function()
+					ErrorCount = ErrorCount + 1;
+					while(ErrorCount !== 0)
 					{
-						NewImage.src = "Images/Undefined.png";
+					if (ErrorCount == 1)
+					{
+						NewImage.src = "Images/" + Word[Nword] + ".png" ;
 					}
+										if (ErrorCount == 2)
+					{
+						NewImage.src = "Images/Undefined.png" ;
+					}
+					}
+				}
+				NewImage.onload = function()
+				{
+				ErrorCount = 0;
 				}
 
 				
