@@ -12,7 +12,7 @@
 				  font-weight: bold;
 				  font-size: 32px;
 				  left: 30px;">Super Dooper Word to Picture Website</p>
-				  <p>gooey pills</p>
+				  <p>trash compactor</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -142,12 +142,13 @@
 				var ErrorCount = 0;
 				NewImage.onerror = function()
 				{
+					let NewImage = document.getElementById("image" +(Nword + 1) + "")
 					alert("An Error has been detected");
 					ErrorCount = ErrorCount + 1;
 					if (ErrorCount == 1)
 					{
 						alert("search for lowercases");
-						NewImage.src = "Images/" + Word[Nword] + ".png" ;
+						NewImage.src = "Images/" + Word[Nword] + ".png";
 					}
 					if (ErrorCount == 2)
 					{
