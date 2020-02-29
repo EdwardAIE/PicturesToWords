@@ -12,6 +12,7 @@
 				  font-weight: bold;
 				  font-size: 32px;
 				  left: 30px;">Super Dooper Word to Picture Website</p>
+				  <p>update</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -142,16 +143,13 @@
 				NewImage.onerror = function()
 				{
 					ErrorCount = ErrorCount + 1;
-					while(ErrorCount !== 0)
-					{
 					if (ErrorCount == 1)
 					{
 						NewImage.src = "Images/" + Word[Nword] + ".png" ;
 					}
-										if (ErrorCount == 2)
+					if (ErrorCount == 2)
 					{
 						NewImage.src = "Images/Undefined.png" ;
-					}
 					}
 				}
 				NewImage.onload = function()
@@ -574,7 +572,7 @@
 						display:table-cell;
 			             " id="cell17">
 						 <div style=" height: 90px;
-									  width: 90px">
+									  width:90px">
 							<img 
 									  style="height: 90px;
 											 width: 90px;
