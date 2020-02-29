@@ -12,7 +12,7 @@
 				  font-weight: bold;
 				  font-size: 32px;
 				  left: 30px;">Super Dooper Word to Picture Website</p>
-				  <p>explosion</p>
+				  <p>funky panda</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -139,30 +139,12 @@
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
 				NewImage.src = "Images/" + Word[Nword] + ".PNG" ;
-				var ErrorCount = 0;
-				var CurrentWord = "" + Word[Nword] + "";
+				
 				NewImage.onerror = function()
 				{
-					let NewImage = document.getElementById("image" +(Nword + 1) + "")
-					alert("An Error has been detected");
-					ErrorCount = ErrorCount + 1;
-					if (ErrorCount == 1)
-					{
-						alert("search for lowercases, current word: " + CurrentWord + "");
-						NewImage.src = "Images/" + CurrentWord + ".png";
-					}
-					if (ErrorCount == 2)
-					{
-						alert("replacing with unknown");
 						NewImage.src = "Images/Undefined.png" ;
-					}
 				}
-				NewImage.onload = function()
-				{
-				ErrorCount = 0;
-				alert("Successfully Loaded");
 				Nword = Nword + 1
-				}
 			}
 			
 			//alert("The first word is " + Word[0]);
