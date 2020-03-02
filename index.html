@@ -58,6 +58,9 @@
 			
 			function RandomFunction()
 			{
+			
+			const fs = require('fs')
+			
 			//the function begins when the button is pressed
 			alert("The button works and there are no initial errors");
 			//the varible sentence is whatever is in the input box
@@ -136,9 +139,16 @@
 				document.getElementById("cell" + (Nword + 1) + "").style.visibility = "visible";
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
-				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
-				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG" ;
+				
+				if (fs.existsSync("Images/" + Word[Nword].toLowerCase() + ".PNG")) {
+				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG";
+				} else 
+				{
+					NewImage.src = "Images/Undefined.png" ;
+				}
+				
+				
 				
 				NewImage.onerror = function()
 				{
@@ -157,10 +167,6 @@
 			</script>
 			
 		</div>
-		<p style="position: relative; 
-					 top: 70px;
-					 left: 30px;
-					 ">Output:</p>
 		<div class="Output" style="position: relative; 
 					 top: 100px;
 					 bottom: 100px;
@@ -671,6 +677,19 @@
 		   height: 100px;">
 		   <h1></h1>
 		   </div>
+	<p style="line-height: 0.9"> Disclaimer: All artwork and images used are my own drawings made for the purpose 
+		of this website. I consider them public domain. Please feel free to save, use and
+		distribute them however you like, they are not copyrighted. Any likeless to images,
+		logos or other artwork made by others is purely coincidental. This website
+		records and sends data on individual words that can not be found in the image
+		library by the website. This data is anonymous and will only be used for the purpose
+		of improving the website. This data may be made public in the future.
+		For an explination of what data this website records, please click the link below.</p>
+		<br>
+		<p>link</p>
+		<br>
+		<p style="line-height: 0.9">If you have a question, sujestion or something to say, the best way to send me a message is to write it all as one word in the box above and click submit.</p>
 	</div>
+	
 	</body>
 </html>

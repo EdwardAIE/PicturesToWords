@@ -72,10 +72,19 @@ distribute however you like, they are not copyrighted.
 				
 				
 				
+To-Do:
+
+Remove punctuation when image searching
+Add jsnode
+Add if path doesnt exist search for lowercase png
+Add feedback with words that havent been added
+
 				
 				
-				
-				
+					<p style="position: relative; 
+					 top: 70px;
+					 left: 30px;
+					 ">Output:</p>
 				
 				
 				
