@@ -11,8 +11,8 @@
 				  color: white;
 				  font-weight: bold;
 				  font-size: 32px;
-				  left: 30px;">Super Dooper Word to Picture Website</p>
-				  <p>Hello Discord Friends, write some shapes and colors below</p>
+				  left: 30px;">Hello Again, I hope I have fixed it</p>
+				  <p>beep beep, im walking here</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -139,14 +139,13 @@
 				document.getElementById("cell" + (Nword + 1) + "").style.visibility = "visible";
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
-								let NewImage = document.getElementById("image" +(Nword + 1) + "")
-				NewImage.src = "Images/" + Word[Nword] + ".png" ;
-				document.head.append(NewImage);
-				
+				let NewImage = document.getElementById("image" +(Nword + 1) + "");
+				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG";
 				NewImage.onerror = function()
 				{
-					NewImage.src = "Images/Undefined.png";
+						NewImage.src = "Images/Undefined.png" ;
 				}
+				Nword = Nword + 1
 			}
 			
 			//alert("The first word is " + Word[0]);
