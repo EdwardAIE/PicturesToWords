@@ -12,7 +12,7 @@
 				  font-weight: bold;
 				  font-size: 32px;
 				  left: 30px;">Super Dooper Word to Picture Website</p>
-				  <p>beep beep, im walking here</p>
+				  <p>Hello Discord Friends, write some shapes and colors below</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -59,7 +59,7 @@
 			function RandomFunction()
 			{
 			
-			const fs = require('fs');
+			
 			
 			//the function begins when the button is pressed
 			alert("The button works and there are no initial errors");
@@ -139,22 +139,14 @@
 				document.getElementById("cell" + (Nword + 1) + "").style.visibility = "visible";
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
-				let NewImage = document.getElementById("image" +(Nword + 1) + "");
-				
-				if (fs.existsSync("Images/" + Word[Nword].toLowerCase() + ".PNG")) {
-				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG";
-				} else 
-				{
-					NewImage.src = "Images/Undefined.png" ;
-				}
-				
-				
+								let NewImage = document.getElementById("image" +(Nword + 1) + "")
+				NewImage.src = "Images/" + Word[Nword] + ".png" ;
+				document.head.append(NewImage);
 				
 				NewImage.onerror = function()
 				{
-						NewImage.src = "Images/Undefined.png" ;
+					NewImage.src = "Images/Undefined.png";
 				}
-				Nword = Nword + 1
 			}
 			
 			//alert("The first word is " + Word[0]);
