@@ -43,7 +43,7 @@
 				   border: 2px solid #4286f4;
 				   width: 624px;
 				   height: 300px;
-				   resize: none"></textarea>
+				   resize: none" spellcheck="true"></textarea>
 			<br>
 			<button onclick="RandomFunction()"
 					style="position:relative;
@@ -56,16 +56,13 @@
 			
 			document.getElementById("Everything").style.zoom = window.innerWidth * 0.001;
 			
-			
-			function RandomFunction()
-			{
-			
 			var fs = require('fs');
 			var file = fs.readFileSync("read.txt", "utf8");
 			console.log(file);
 			
 			
-			
+			function RandomFunction()
+			{
 			
 			//the function begins when the button is pressed
 			alert("The button works and there are no initial errors");
