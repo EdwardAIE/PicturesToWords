@@ -60,6 +60,11 @@
 			function RandomFunction()
 			{
 			
+			var fs = require('fs');
+			var file = fs.readFileSync("read.txt", "utf8");
+			console.log(file);
+			
+			
 			
 			
 			//the function begins when the button is pressed
