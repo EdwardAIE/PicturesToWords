@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Fully colorised</title>
+		<title>loading complete</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -139,37 +139,20 @@
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
 				
-				var current_word = "";
-				var previous_word = "";
-				
-				var current_word = Word[Nword];
-				var previous_word = Word[previous_Nword];
-				
-				var dirA = "Images/" + previous_word + " " + current_word + ".PNG";
-				var dirB = "Images/" + previous_word + " " + current_word + ".png";
-				var dirC = "Images/" + current_word + ".PNG";
-				var dirD = "Images/" + current_word + ".png";
+				var dirC = "Images/" + Word[Nword] + ".PNG";
+				var dirD = "Images/" + Word[Nword] + ".png";
 				var dirE = "Images/Undefined.png";
 				
-				NewImage.src = dirA;
+				NewImage.src = dirC;
 				NewImage.onerror = function()
-				{	
-					NewImage.src = dirB;
+				{
+					NewImage.src = dirD;
 					NewImage.onerror = function()
 					{
-						NewImage.src = dirC;
-						NewImage.onerror = function()
-						{
-							NewImage.src = dirD;
-							NewImage.onerror = function()
-							{
-								NewImage.src = dirE;
-							}
-						
-						}
+						NewImage.src = dirE;
 					}
+						
 				}
-				previous_Nword = Nword;
 				Nword=Nword+1;
 			}
 			
