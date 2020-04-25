@@ -1,18 +1,5 @@
 			document.getElementById("Everything").style.zoom = window.innerWidth * 0.001;
 			
-			var fs = require('browserify-fs');
-	fs.readFile('https://edwardaie.github.io/PicturesToWords/read.txt', function read(err, data) {
-    const content = data;
-
-    // Invoke the next step here however you like
-    console.log(content);   // Put all of the code here (not the best solution)
-    processFile(content);   // Or put the next step in a function and invoke it
-});
-
-function processFile(content) {
-    console.log(content);
-}
-			
 			function RandomFunction()
 			{
 			
@@ -98,7 +85,13 @@ function processFile(content) {
 				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG";
 				NewImage.onerror = function()
 				{
+						let NewImageA = document.getElementById("image" +(Nword + 1) + "");
+						NewImageA.src = "Images/" + Word[Nword].toLowerCase() + ".png";
+						NewImageA.onerror = function()
+						{
 						NewImage.src = "Images/Undefined.png" ;
+						}
+						
 				}
 				Nword = Nword + 1
 			}

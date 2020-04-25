@@ -18915,9 +18915,6 @@ function wrappy (fn, cb) {
 			
 			var fs = require('browserify-fs');
 	fs.readFile('https://edwardaie.github.io/PicturesToWords/read.txt', function read(err, data) {
-    if (err) {
-        throw err;
-    }
     const content = data;
 
     // Invoke the next step here however you like
