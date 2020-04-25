@@ -94,6 +94,7 @@
 					NewImage.src = dirC;	
 					}
 				}
+				Nword=Nword+1
 			}
 			
 			//alert("The first word is " + Word[0]);
