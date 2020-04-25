@@ -10,7 +10,7 @@ travel
 clothes
 hardware store
 rooms
-time date months
+time date months seasons
 ect
 
 
@@ -85,7 +85,6 @@ caramel
 Caramel Apple
 Caramelo
 carbon dioxide
-carrot
 cart
 cashmere
 castle
@@ -111,14 +110,11 @@ christmas tree
 cigarette
 city
 clay
-clock
-cloud
 coal
 coconut
 coconut milk
 coffin
 cold
-computer
 computer mouse
 confetti
 constellation
@@ -129,7 +125,6 @@ corpse
 cotton
 cotton candy
 cow
-crayon
 crow
 crown
 crystal ball
@@ -161,13 +156,11 @@ eagle
 earth
 earthquake
 eclipse
-egg
 egg timer
 electric car
 electric eel
 electrician
 electricity
-email
 energy
 engineer
 eruption
@@ -188,7 +181,6 @@ fire extinguisher
 fireman
 fireplace
 firetruck
-fireworks
 fish
 fish and chips
 fishing rod
@@ -221,12 +213,10 @@ gift
 gingerbread house
 gingerbread man
 glacier
-glass
 glasses
 gnome
 goat
 Godzilla
-gold
 Goldfish
 golem
 granite
@@ -257,7 +247,6 @@ hero
 hippo
 honey
 horizon
-horse
 horseshoe
 hospital
 hourglass
@@ -284,7 +273,6 @@ jesus
 jewelry
 jeep
 Keyboard Cat
-kite
 knight
 lake
 lamp
@@ -299,7 +287,6 @@ letter
 library
 life
 light
-light bulb
 lighthouse
 lightsaber
 lion
@@ -346,10 +333,8 @@ mummy
 music
 narwhal
 needle
-nerd
 Nessie
 nest
-newspaper
 night
 ninja
 Ninja Turtle
@@ -609,15 +594,11 @@ zombie
 Little Alchemy 2
 
 
-Achilles	Myths
-Acid Rain	
+Achilles	Myths	
 Aegis	Myths
 Aeolus	Myths
-Air	
-Airplane	
 Alarm Clock	
 Alchemist	
-Alcohol	
 Algae	
 Alien	
 Allergy	
@@ -640,14 +621,12 @@ Archipelago
 Arctic	
 Armadillo	
 Armor	
-Arrow	
 Ash	
 Astronaut	
 Atmosphere	
 Atomic Bomb	
 Aurora	
 Avalanche	
-Axe	
 Baast	Myths
 Baba Yaga	Myths
 Babe The Blue Ox	Myths
@@ -657,7 +636,6 @@ Baker
 Bakery	
 Banana	
 Banana Bread	
-Bandage	
 Bank	
 Banshee	Myths
 Barn	
@@ -983,8 +961,6 @@ Internet
 Island	
 Ivy	
 Jackalope	Myths
-Jack-o-lantern	
-Jam	
 Jar	
 Jerky	
 Jiangshi	Myths
@@ -1382,8 +1358,7 @@ Wall
 Wand	
 Warmth	
 Warrior	
-Watch	
-Water	
+Watch		
 Water Gun	
 Water Lily	
 Water Pipe	
