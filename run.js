@@ -84,7 +84,7 @@
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
 				var dirA = "Images/" + Word[Nword].toLowerCase() + ".PNG";
 				var dirB = "Images/" + Word[Nword].toLowerCase() + ".png";
-				var dirC = "undefined.png";
+				var dirC = "Images/Undefined.png";
 				NewImage.src = dirA;
 				NewImage.onerror = function errorone()
 				{		
