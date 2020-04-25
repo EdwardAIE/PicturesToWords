@@ -2,7 +2,7 @@
   "name": "wordstopictures",
   "version": "1.0.0",
   "description": "",
-  "main": "\u001b[D\u001bhtmljs\u001b[C\u001b[C)",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/EdwardAIE/PicturesToWords.git"
   },
-  "author": "Edward Bellingham",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EdwardAIE/PicturesToWords/issues"
