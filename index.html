@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>loading complete</title>
+		<title>if complete</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -144,10 +144,10 @@
 				var dirE = "Images/Undefined.png";
 				
 				NewImage.src = dirC;
-				NewImage.onerror = function()
+				if(NewImage.complete == false)
 				{
 					NewImage.src = dirD;
-					NewImage.onerror = function()
+					if(NewImage.complete == false)
 					{
 						NewImage.src = dirE;
 					}
