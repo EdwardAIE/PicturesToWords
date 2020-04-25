@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Words to Pictures</title>
+		<title>Fully cooked</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -139,8 +139,11 @@
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
 				
-				var current_word = Word[Nword].toLowerCase;
-				var previous_word = Word[previous_Nword].toLowerCase();
+				var current_word = "";
+				var previous_word = "";
+				
+				var current_word = (Word[Nword]+"").toLowerCase;
+				var previous_word = (Word[previous_Nword]+"").toLowerCase();
 				
 				var dirA = "Images/" + previous_word + " " + current_word + ".PNG";
 				var dirB = "Images/" + previous_word + " " + current_word + ".png";
