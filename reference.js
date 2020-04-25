@@ -1,18 +1,5 @@
 			document.getElementById("Everything").style.zoom = window.innerWidth * 0.001;
 			
-			var fs = require('browserify-fs');
-	fs.readFile('https://edwardaie.github.io/PicturesToWords/read.txt', function read(err, data) {
-    const content = data;
-
-    // Invoke the next step here however you like
-    console.log(content);   // Put all of the code here (not the best solution)
-    processFile(content);   // Or put the next step in a function and invoke it
-});
-
-function processFile(content) {
-    console.log(content);
-}
-			
 			function RandomFunction()
 			{
 			
@@ -88,19 +75,52 @@ function processFile(content) {
 			//re-writing the new words into table
 			
 			var Nword = 0
+			var LoadErrorCount = 0;
+			var ImageLoaded = true;
 			
 			while(typeof Word[Nword] !== "undefined")
 			{	
+				ImageLoaded = true;
 				document.getElementById("cell" + (Nword + 1) + "").style.visibility = "visible";
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
-				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG";
-				NewImage.onerror = function()
+				var dirA = "Images/" + Word[Nword].toLowerCase() + ".PNG";
+				var dirB = "Images/" + Word[Nword].toLowerCase() + ".png";
+				var dirC = "Images/Undefined.png";
+				
+				if(LoadErrorCount == 0)
 				{
-						NewImage.src = "Images/Undefined.png" ;
+					NewImage.src = dirA;
+					NewImage.onerror = function()
+					{
+						NewImage.src = "Images/Undefined.png";
+						ImageLoaded = false;
+					}
 				}
-				Nword = Nword + 1
+				if(LoadErrorCount == 1)
+				{
+					NewImage.src = dirB;
+					NewImage.onerror = function()
+					{
+						NewImage.src = "Images/Undefined.png";
+						ImageLoaded = false;
+					}
+				}
+				if(LoadErrorCount == 2)
+				{
+					NewImage.src = dirC;
+				}
+				
+				if(ImageLoaded == true)
+				{
+					LoadErrorCount = 0;
+					Nword = Nword + 1;
+				}
+				else
+				{
+					LoadErrorCount = LoadErrorCount + 1;
+				}
 			}
 			
 			//alert("The first word is " + Word[0]);
