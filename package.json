@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/EdwardAIE/PicturesToWords#readme",
   "dependencies": {
-    "browserfy": "^1.0.0"
+    "browserfy": "^1.0.0",
+    "browserify": "^16.5.1",
+    "browserify-fs": "^1.0.0"
   }
 }

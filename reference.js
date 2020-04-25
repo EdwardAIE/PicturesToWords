@@ -1,6 +1,6 @@
 			document.getElementById("Everything").style.zoom = window.innerWidth * 0.001;
 			
-			var fs = require('fs');
+			var fs = require('browserify-fs');
 			var file = fs.readFileSync("read.txt", "utf8");
 			console.log(file);
 			
