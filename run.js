@@ -85,13 +85,20 @@
 				var dirA = "Images/" + Word[Nword].toLowerCase() + ".PNG";
 				var dirB = "Images/" + Word[Nword].toLowerCase() + ".png";
 				var dirC = "Images/Undefined.png";
-				NewImage.src = dirA;
-				NewImage.onerror = function errorone()
-				{		
-					NewImage.src = dirB;
-					NewImage.onerror = function errortwo()
-					{		
-					NewImage.src = dirC;	
+				
+				try
+				{
+				NewImage.src = dirA;	
+				}
+				catch(e)
+				{
+					try
+					{
+						NewImage.src = dirB;
+					}
+					catch(e)
+					{
+						NewImage.src = dirC;
 					}
 				}
 				Nword=Nword+1
