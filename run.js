@@ -82,18 +82,18 @@
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
-				NewImage.src = "Images/" + Word[Nword].toLowerCase() + ".PNG";
-				NewImage.onerror = function()
-				{
-						let NewImageA = document.getElementById("image" +(Nword + 1) + "");
-						NewImageA.src = "Images/" + Word[Nword].toLowerCase() + ".png";
-						NewImageA.onerror = function()
-						{
-						NewImage.src = "Images/Undefined.png" ;
-						}
-						
+				var dirA = "Images/" + Word[Nword].toLowerCase() + ".PNG";
+				var dirB = "Images/" + Word[Nword].toLowerCase() + ".png";
+				var dirC = "undefined.png";
+				NewImage.src = dirA;
+				NewImage.onerror = function errorone()
+				{		
+					NewImage.src = dirB;
+					NewImage.onerror = function errortwo()
+					{		
+					NewImage.src = dirC;	
+					}
 				}
-				Nword = Nword + 1
 			}
 			
 			//alert("The first word is " + Word[0]);
