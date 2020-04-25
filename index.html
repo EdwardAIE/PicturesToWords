@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Words to Pictures</title>
+		<title>Words to Pictures Update</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -129,7 +129,8 @@
 			
 			//re-writing the new words into table
 			
-			var Nword = 0
+			var Nword = 0;
+			var previous_Nword = 0;
 			
 			while(typeof Word[Nword] !== "undefined")
 			{	
@@ -138,10 +139,13 @@
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
 				
-				var dirA = "Images/" + Word[(Nword - 1)].toLowerCase() + " " + Word[Nword].toLowerCase() + ".PNG";
-				var dirB = "Images/" + Word[(Nword - 1)].toLowerCase() + " " + Word[Nword].toLowerCase() + ".png";
-				var dirC = "Images/" + Word[Nword].toLowerCase() + ".PNG";
-				var dirD = "Images/" + Word[Nword].toLowerCase() + ".png";
+				var current_word = Word[Nword].toLowerCase+"";
+				var previous_word = Word[previous_Nword].toLowerCase()+"";
+				
+				var dirA = "Images/" + previous_word + " " + current_word + ".PNG";
+				var dirB = "Images/" + previoud_word " " + current_word + ".png";
+				var dirC = "Images/" + current_word + ".PNG";
+				var dirD = "Images/" + current_word + ".png";
 				var dirE = "Images/Undefined.png";
 				
 				NewImage.src = dirA;
@@ -162,7 +166,8 @@
 						}
 					}
 				}
-				Nword=Nword+1
+				Prevuos_Nword = Nword;
+				Nword=Nword+1;
 			}
 			
 			//alert("The first word is " + Word[0]);
