@@ -1,7 +1,7 @@
 			document.getElementById("Everything").style.zoom = window.innerWidth * 0.001;
 			
 			var fs = require('browserify-fs');
-	fs.readFile('./read.txt', function read(err, data) {
+	fs.readFile('read.txt', function read(err, data) {
     if (err) {
         throw err;
     }
