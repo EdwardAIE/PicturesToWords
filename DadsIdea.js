@@ -82,30 +82,31 @@
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
-				var dirA = "Images/" + Word[Nword].toLowerCase() + ".PNG";
-				var dirB = "Images/" + Word[Nword].toLowerCase() + ".png";
-				var dirC = "Images/Undefined.png";
+				
+				var dirA = "Images/" Word[(Nword - 1)].toLowerCase() + " " + Word[Nword].toLowerCase() + ".PNG";
+				var dirB = "Images/" Word[(Nword - 1)].toLowerCase() + " " + Word[Nword].toLowerCase() + ".png";
+				var dirC = "Images/" + Word[Nword].toLowerCase() + ".PNG";
+				var dirD = "Images/" + Word[Nword].toLowerCase() + ".png";
+				var dirE = "Images/Undefined.png";
 				
 				NewImage.src = dirA;
 				NewImage.onerror = function()
-				{
+				{	
 					NewImage.src = dirB;
 					NewImage.onerror = function()
 					{
 						NewImage.src = dirC;
+						NewImage.onerror = function()
+						{
+							NewImage.src = dirD;
+							NewImage.onerror = function()
+							{
+								NewImage.src = dirE;
+							}
 						
+						}
 					}
-						
 				}
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				Nword=Nword+1
 			}
 			
