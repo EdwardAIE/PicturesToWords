@@ -11,7 +11,7 @@
 				  color: white;
 				  font-weight: bold;
 				  font-size: 32px;
-				  left: 30px;">Words To Pictures (Updated)</p>
+				  left: 30px;">Words To Pictures</p>
 		</div>
 		<div class="Input" 
 			 style=" position: relative; 
@@ -139,8 +139,8 @@
 				
 				let NewImage = document.getElementById("image" +(Nword + 1) + "");
 				
-				var current_word = Word[Nword].toLowerCase+"";
-				var previous_word = Word[previous_Nword].toLowerCase()+"";
+				var current_word = Word[Nword].toLowerCase;
+				var previous_word = Word[previous_Nword].toLowerCase();
 				
 				var dirA = "Images/" + previous_word + " " + current_word + ".PNG";
 				var dirB = "Images/" + previous_word + " " + current_word + ".png";
