@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Dirs</title>
+		<title>Words To Pictures</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -160,8 +160,8 @@
 				}
 				else
 				{
-				var dirA = "Images/" + Word[(Nword-1)] + Word[Nword] + ".PNG";
-				var dirB = "Images/" + Word[(Nword-1)] + Word[Nword] + ".png";
+				var dirA = "Images/" + Word[(Nword-1)] + " " + Word[Nword] + ".PNG";
+				var dirB = "Images/" + Word[(Nword-1)] + " " +Word[Nword] + ".png";
 				var dirC = "Images/" + Word[Nword] + ".PNG";
 				var dirD = "Images/" + Word[Nword] + ".png";
 				var dirE = "Images/Undefined.png";
@@ -173,46 +173,38 @@
 				
 				if (request.status === 404) 
 				{
-					alert("The page you are trying to reach is not available.");
 					request.open('GET', dirB, false);
 					request.send();
 					if (request.status === 404) 
 					{
-						alert("The page you are trying to reach is not available.");
 						request.open('GET', dirC, false);
 						request.send();
 						if (request.status === 404) 
 						{
 							request.open('GET', dirD, false);
 							request.send();
-							alert("The page you are trying to reach is not available.");
 							if (request.status === 404) 
 							{
-								alert("The page you are trying to reach is not available.");
 								NewImage.src = dirE;
 							}
 							else
 							{
-								alert("Link Found !");
 								NewImage.src = dirD;
 							}
 						}
 						else
 						{
-							alert("Link Found !");
 							NewImage.src = dirC;
 						}
 					}
 					else
 					{
-						alert("Link Found !");
 						NewImage.src = dirB;
 					}
 				
 				}
 				else
 				{
-				alert("Link Found !");
 				NewImage.src = dirA;
 				}
 				
@@ -224,8 +216,9 @@
 				
 				
 				Nword=Nword+1;
+				
 			}
-			
+			console.clear();
 			//alert("The first word is " + Word[0]);
 			//alert("The second word is " + Word[1]);
 			//alert("The third word is " + Word[2]);
