@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Secure</title>
+		<title>Secure Try</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -137,6 +137,9 @@
 				document.getElementById("cell" + (Nword + 1) + "").style.visibility = "visible";
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
+				let NewImage = document.getElementById("image" +(Nword + 1) + "");
+				
+				
 				var request;
 				if(window.XMLHttpRequest)
 				{
@@ -147,17 +150,55 @@
 				request = new ActiveXObject("Microsoft.XMLHTTP");
 				}
 				
+				var dirA = "Images/" + previous_word + Word[(Nword-1)] + Word[Nword] + ".PNG";
+				var dirB = "Images/" + previous_word + Word[(Nword-1)] + Word[Nword] + ".png";
+				var dirC = "Images/" + Word[Nword] + ".PNG";
+				var dirD = "Images/" + Word[Nword] + ".png";
+				var dirE = "Images/Undefined.png";
+				
+				
+				
 				request.open('GET', 'https://edwardaie.github.io/PicturesToWords/Images/' + Word[Nword] + '.PNG', false);
 				request.send();
 				
-				
 				if (request.status === 404) 
 				{
-				alert("The page you are trying to reach is not available.");
+				
+					alert("The page you are trying to reach is not available.");
+					if (request.status === 404) 
+					{
+						alert("The page you are trying to reach is not available.");
+						if (request.status === 404) 
+						{
+							alert("The page you are trying to reach is not available.");
+							if (request.status === 404) 
+							{
+								alert("The page you are trying to reach is not available.");
+								NewImage.src = dirE;
+							}
+							else
+							{
+								alert("Link Found !");
+								NewImage.src = dirD;
+							}
+						}
+						else
+						{
+							alert("Link Found !");
+							NewImage.src = dirC;
+						}
+					}
+					else
+					{
+						alert("Link Found !");
+						NewImage.src = dirB;
+					}
+				
 				}
 				else
 				{
 				alert("Link Found !");
+				NewImage.src = dirA;
 				}
 				
 				
