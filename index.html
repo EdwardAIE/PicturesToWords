@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Secure Try</title>
+		<title>Play Now 50c</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -150,12 +150,22 @@
 				request = new ActiveXObject("Microsoft.XMLHTTP");
 				}
 				
-				var dirA = "Images/" + previous_word + Word[(Nword-1)] + Word[Nword] + ".PNG";
-				var dirB = "Images/" + previous_word + Word[(Nword-1)] + Word[Nword] + ".png";
+				if((Nword-1) < 0)
+				{
+				var dirA = "Images/" + Word[Nword] + ".PNG";
+				var dirB = "Images/" + Word[Nword] + ".png";
 				var dirC = "Images/" + Word[Nword] + ".PNG";
 				var dirD = "Images/" + Word[Nword] + ".png";
 				var dirE = "Images/Undefined.png";
-				
+				}
+				else
+				}
+				var dirA = "Images/" + Word[(Nword-1)] + Word[Nword] + ".PNG";
+				var dirB = "Images/" + Word[(Nword-1)] + Word[Nword] + ".png";
+				var dirC = "Images/" + Word[Nword] + ".PNG";
+				var dirD = "Images/" + Word[Nword] + ".png";
+				var dirE = "Images/Undefined.png";
+				}
 				
 				
 				request.open('GET', 'https://edwardaie.github.io/PicturesToWords/Images/' + Word[Nword] + '.PNG', false);
