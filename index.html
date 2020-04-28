@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>timer added</title>
+		<title>check url test</title>
 	</head>
 	<body style="background-color:#6583b2;">
 		<div id="Everything" style="width: 690px; margin: 0px auto; zoom:1;">
@@ -137,24 +137,36 @@
 				document.getElementById("cell" + (Nword + 1) + "").style.visibility = "visible";
 				document.getElementById("word" + (Nword + 1) + "").innerHTML = Word[Nword] + "";
 				
-				let NewImage = document.getElementById("image" +(Nword + 1) + "");
-				
-				var dirC = "Images/" + Word[Nword] + ".PNG";
-				var dirD = "Images/" + Word[Nword] + ".png";
-				var dirE = "Images/Undefined.png";
-				
-				NewImage.src = dirC;
-				sleep( 100 );
-				if(NewImage.complete == false)
+				var request;
+				if(window.XMLHttpRequest)
 				{
-					NewImage.src = dirD;
-					sleep( 100 );
-					if(NewImage.complete == false)
-					{
-						NewImage.src = dirE;
-					}
-						
+				request = new XMLHttpRequest();
 				}
+				else
+				{
+				request = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				
+				request.open('GET', 'http://www.google.com', false);
+				request.send();
+				
+				
+				if (request.status === 404) 
+				{
+				alert("The page you are trying to reach is not available.");
+				}
+				else
+				{
+				alert("Link Found !");
+				}
+				
+				
+				
+				
+				
+				
+				
+				
 				Nword=Nword+1;
 			}
 			
