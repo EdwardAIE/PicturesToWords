@@ -1,0 +1,15 @@
+Shop
+Store
+Hat
+Dress
+Skirt
+Makeup
+lipstick
+high-heels
+stockings
+leggings
+suit
+dinner suit
+watch
+coat
+shirt
