@@ -61,13 +61,11 @@
 			//the function begins when the button is pressed
 			alert("The button works and there are no initial errors");
 			//the varible sentence is whatever is in the input box
-			var sentence = document.getElementById("texty").value + " ";	
+			var sentence = document.getElementById("texty").value;	
 			//alert( sentence );
 			
 			//Checking if there are any spaces in the text
-			var Space_Check = sentence.indexOf(' ');
-			
-			if(Space_Check < 0)
+			if(sentence.indexOf(" ") < 0)
 			{
 			console.log("Is this code being used");
 			var Word = []
@@ -75,6 +73,8 @@
 			}
 			else
 			{
+			var sentence = document.getElementById("texty").value + " ";
+			
 			console.log("your if else inst working");
 			//finding the positing of the spaces in Sentence
 			var Spaces = [];
