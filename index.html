@@ -64,6 +64,18 @@
 			var sentence = document.getElementById("texty").value + " ";	
 			//alert( sentence );
 			
+			//Checking if there are any spaces in the text
+			var Space_Check = sentence.indexOf(' ');
+			
+			if(Space_Check < 0)
+			{
+			console.log("Is this code being used");
+			var Word = []
+			Word[0] = (sentence + "");
+			}
+			else
+			{
+			console.log("your if else inst working");
 			//finding the positing of the spaces in Sentence
 			var Spaces = [];
 			var LastSpace = 0;
@@ -110,6 +122,10 @@
 			}
 			}
 			)
+			
+			}
+			
+			
 			
 			//clearing the table from any previous runs
 			
