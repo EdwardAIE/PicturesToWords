@@ -59,7 +59,8 @@
 			{
 			
 			//the function begins when the button is pressed
-			alert("The button works and there are no initial errors");
+			//alert("The button works and there are no initial errors");
+			
 			//the varible sentence is whatever is in the input box
 			var sentence = document.getElementById("texty").value;	
 			//alert( sentence );
@@ -67,27 +68,34 @@
 			//Checking if there are any spaces in the text
 			if(sentence.indexOf(" ") < 0)
 			{
-			console.log("Is this code being used");
+			
+			//If there are no spaces, the first word is equal to the entire user input
 			var Word = []
 			Word[0] = (sentence + "");
+			
 			}
 			else
 			{
+			
+			//A space is added to the end to help the code recognise the final word
+			//The code takes anything imbetween two spaces to be a word, with the exculsion of the first word
+			
 			var sentence = document.getElementById("texty").value + " ";
 			
-			console.log("your if else inst working");
+			
 			//finding the positing of the spaces in Sentence
 			var Spaces = [];
 			var LastSpace = 0;
 			var ThisSpace = 0;
 			
+			//This if statement checks to see if the user input begins with a space
 			if(sentence.indexOf(" ", 0) == 0)
 			{
 			 Spaces.push(sentence.indexOf(" ", 0));
 			 LastSpace = sentence.indexOf(" ", 0);
 			}
 			
-			
+			//This for loop finds the location of the other spaces in the user input string
 			while(LastSpace > -1)
 			{
 			 Spaces.push(sentence.indexOf(" ", LastSpace + 1));
@@ -96,25 +104,28 @@
 			
 			//alert("Spaces are at" + Spaces + "");
 			
+			
 			//Turing the Spaces into words
 			
 			var Word = []
-			var UFWord = []
+			var Unfiltered_Word = []
 			var a = 0;
 			var validWord = 0;
 			
-			UFWord.push(sentence.substring(0, Spaces[a]));
+			//Pushes the first word to the unfiltered words array
+			Unfiltered_Word.push(sentence.substring(0, Spaces[a]));
 			
+			//pushes the rest of the words to the unfiltered word array
 			while(validWord > -1)
 			{
-				UFWord.push(sentence.substring(Spaces[a] + 1, Spaces[(a+1)]));
+				Unfiltered_Word.push(sentence.substring(Spaces[a] + 1, Spaces[(a+1)]));
 				a = (a+1);
 				validWord = Spaces[a+1];
 			}
 			
-			//filtering for words double spaces 
 			
-			UFWord.forEach(function(element)
+			//filtering for words double spaces 
+			Unfiltered_Word.forEach(function(element)
 			{
 			if(element != "")
 			{
@@ -127,7 +138,7 @@
 			
 			
 			
-			//clearing the table from any previous runs
+			//clearing the output table from any previous runs
 			
 			var j = 1;
 			while(j <= 21)
@@ -143,10 +154,11 @@
 				j=j+1
 			}
 			
-			//re-writing the new words into table
 			
+			//re-writing the new words onto output table
+			
+			//Nword is used to keep track of what number of words have already gone through the loop
 			var Nword = 0;
-			var previous_Nword = 0;
 			
 			while(typeof Word[Nword] !== "undefined")
 			{	
@@ -956,7 +968,6 @@
 		by volenteers and friends for the purpose of this website </p>
 		<p style="line-height: 0.9">If you have a question, suggestion or something to say I can be reached here and here:</p>
 		<p style="line-height: 0.9">e-mail: everything.diabolo@gmail.com</p>
-		<p>This is here for debug reasons</p>
 	</div>
 	
 	</body>
